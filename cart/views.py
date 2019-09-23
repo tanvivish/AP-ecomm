@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def cart(request):
-    return render(request, 'cart342352352342525.html')
+    return render(request, 'cart.html')
