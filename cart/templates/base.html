@@ -1,0 +1,22 @@
+<html>
+<head>
+    {% load static %}
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+
+  <script src="{% static 'css/js/materialize.js' %}"></script>
+  <script src="{% static 'css/js/materialize.min.js' %}"></script>
+  <script src="{% static 'css/js/init.js' %}"></script>
+
+
+</body>
+</html>
