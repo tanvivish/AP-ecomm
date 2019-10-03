@@ -58,6 +58,7 @@ def createpost(request, product_id):
         }
         return HttpResponse(template.render(context, request))
 
+<<<<<<< HEAD
 def cart(request):
     products = product.objects.all().filter(cart = "1")
     template = loader.get_template('cart.html')
@@ -118,3 +119,10 @@ def search(request):
         return template.render(context, request)
     else:
         return render(request,"search.html",{})
+=======
+# Create your views here.
+
+
+def cart(request):
+    return render(request, 'cart.html')
+>>>>>>> 8327fe177c1e426bd2c53c8b0c6c403bb52e4af4
