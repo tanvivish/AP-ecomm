@@ -58,7 +58,7 @@
 {% if products %}
             <ul>
             {% for product in products %}
-                <h5 class="center"><li><a href="/ecommerce/{{ product.product_ID }}/">Product: {{product.prodcut_name }}</a> | Quantity: {{product.quantity }} | Price: Rs.{% widthratio product.price 1 product.quantity %}</li></h5>
+                <h5 class="center"><li><a href="/ecommerce/{{ product.product_ID }}/">Product: {{product.product_name }}</a> | Quantity: {{product.quantity }} | Price: Rs.{% widthratio product.price 1 product.quantity %}</li></h5>
                 <script>
                 sum = sum + {% widthratio product.price 1 product.quantity %}
                 </script>
