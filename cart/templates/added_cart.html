@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% extends 'base.html' %}
 {% block head %}
 <head>
 {% load static %}
@@ -10,18 +11,19 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'static/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'static/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 {% endblock %}
 {% block body %}
 <body>
   {% load static %}
   <nav class="indigo lighten-3" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="http://127.0.0.1:8000/cart/" class="brand-logo">
+    <div class="nav-wrapper container"><a id="logo-container" href="http://localhost:8000/ecommerce/" class="brand-logo"><img src="{% static 'css/adicalogo.png' %}"></a>
       {% load static %}
       <ul class="right hide-on-med-and-down">
-        <li><a href="http://127.0.0.1:8000/cart/">Cart</a></li><li><i class="material-icons">shopping_cart</i></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="http://localhost:8000/ecommerce/cart">Cart</a></li><li><i class="material-icons">shopping_cart</i></li>
         <li><a href="#">Help</a></li>
         <li><input type="text" placeholder="Search.." name="search"></li><li><i class="material-icons">search</i></li>
       </ul>
@@ -33,32 +35,17 @@
     </div>
   </nav>
 
-
+<br><br><br><br>
   <div class="container">
     <div class="section">
+
       <!--   Icon Section   -->
       <div class="row">
-        {% if products %}
-            <ul>
-            {% for product in products %}
-                <h5 class="center"><li><a href="{{ product.product_ID }}/POST">Product: {{product.product_name }} |</a> Quantity: {{product.quantity }} | Price: Rs.{% widthratio product.price 1 product.quantity %}</li></h5>
-                <img src="{{ product.imagesrc }}" width="240" height= "240" />
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>No products are available.</p>
-        {% endif %}
-<form action='checkout/' method="POST" id="form1">
-{% csrf_token %}
-<br>
-<div class="container">
-  <div class="center">
-</div>
-</div>
- </form>
-      </div>
 
-      </div>
+Congratulations! Product {{products.prodcut_name }} has been added to the cart.
+
+<a href = "http://localhost:8000/ecommerce"> Continue Shopping! </a>
+
 
   <!--      <div class="col s12 m4">
           <div class="icon-block">
@@ -91,11 +78,29 @@
 
 
         </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
