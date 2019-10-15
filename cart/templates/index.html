@@ -41,7 +41,7 @@
         {% if products %}
             <ul>
             {% for product in products %}
-                <h5 class="center"><li><a href="{{ product.product_ID }}/POST">Product: {{product.product_name }} |</a> Quantity: {{product.quantity }} | Price: Rs.{% widthratio product.price 1 product.quantity %}</li></h5>
+                <h5 class="center"><li><a href="{{ product.product_ID }}/POST">Product: {{product.product_name }} </a>| Price: Rs.{{product.price}}</li></h5>
                 <img src="{{ product.imagesrc }}" width="240" height= "240" />
             {% endfor %}
             </ul>
