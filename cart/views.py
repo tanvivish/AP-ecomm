@@ -57,7 +57,7 @@ def createpost(request, product_id):
     products.quantity = products.quantity + 1
     products.save(update_fields=['cart'])
     products.save(update_fields=['quantity'])
-    template = loader.get_template('cart/added_cart.html')
+    template = loader.get_template('added_cart.html')
     context = {
         'products': products,
     }
